@@ -1,0 +1,250 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    padding-left: 20px;
+}
+
+/* App Title */
+.app_title {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 5px 25px;
+    width: 100vw;
+    font-family: "Abril Fatface", serif;
+    font-size: 2rem;
+    height: 10vh;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .app_title {
+        grid-template-columns: 1fr;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+
+/* Content Box */
+.content-box {
+    display: flex;
+    border-top: 4px double black;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100vw;
+    padding: 25px;
+}
+
+/* Entry List */
+.entryList {
+    margin-top: 50px;
+    max-width: 100%;
+    padding: 50px;
+    font-family: "Abril Fatface", serif;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.entryList li {
+    list-style: none;
+}
+
+.entryList a {
+    text-decoration: none;
+    color: black;
+    gap: 2px;
+}
+
+.entryList a:hover {
+    color: blue;
+    text-decoration: underline !important;
+}
+
+.entryList h2 {
+    color: black;
+    border-bottom: solid 2px black;
+    font-family: "Roboto";
+}
+
+/* New Entry Section */
+.r-entry {
+    padding-top: 5%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.r-entry h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 25px;
+}
+
+.r-entry form {
+    width: 100%;
+    max-width: 600px;
+}
+
+.r-entry p {
+    text-align: left;
+    font-family: "Abril Fatface";
+}
+
+/* Form Group */
+.form-group {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    width: 100%;
+    border: solid 4px black;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.form-control {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* Buttons */
+#submitButton, #cancelButton {
+    margin: 5px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    width: 48%;
+}
+
+.new-entry-btn {
+    margin-top: 15%;
+    width: 100%;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    font-size: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    color: black;
+}
+
+/* Entry Fields */
+#entry-title {
+    color: black;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+#entry-content {
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    height: 150px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Entry List Adjustments */
+.entryList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.postDate {
+    margin-top: 20px;
+    font-weight: 100;
+}
+
+/* Edit Section */
+.editEJS {
+    display: flex;
+    justify-content: center;
+}
+
+.edit-box {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.edit-entry {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.editForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+.edit-control {
+    width: 100vw;
+}
+
+.form-btns {
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .entryList {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .r-entry {
+        padding-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .app_title {
+        padding: 10px;
+        font-size: 1.25rem;
+    }
+
+    .r-entry h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-group {
+        padding: 10px;
+    }
+
+    #submitButton, #cancelButton {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}

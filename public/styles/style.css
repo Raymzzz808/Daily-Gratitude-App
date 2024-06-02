@@ -1,0 +1,530 @@
+body {
+    background: linear-gradient(300deg, #0a87b4, #9fdbdf, #0a87b4);
+    background-size: 120% 200%;
+    animation: gradient-animation 1ms ease infinite;
+    max-width:100vw;
+}
+
+.navbar-brand{
+    font-family: "Syntony", sans-serif;
+    display:flex;
+    flex-wrap:wrap;
+    font-size:1rem !important;
+    font-weight:100;
+    max-width:100%;
+    display:inline-flex;
+}
+.nav-link{
+    color:white !important;
+    font-family: "Syntony", sans-serif;
+}
+.dropdown-item{
+    color:white !important;
+}
+
+.dropdown-item:hover{
+    font-size:110% !important;
+    color:rgb(0, 33, 94) !important;
+}
+
+.nav-link:hover{
+    font-size:110% !important;
+}
+
+.app_title{
+    color: rgb(0, 33, 94);
+    display:flex;
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+    margin-top:5px;
+    padding-top:5px;
+    width:100%;
+    font-weight: 100;
+    font-family:"Abril Fatface",serif;
+    justify-content:center;
+    font-size:3.1rem;
+    max-width:100%;
+    margin-left:0px;
+}
+.quote{
+    display:flex;
+    justify-content:center;
+    padding:50px;
+
+}
+
+.content-box{
+    display:flex;
+    width:100%;
+    height:100vh;
+    margin-left:0px;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    
+}
+/* //////// ENTRY FORM /////// */
+
+.r-entry{ /*BUTTON*/
+    width:100%;
+    max-height:100%;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    align-items:center !important;
+    justify-content:center !important;
+}
+#submissionForm{
+    padding:25px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
+.r-entry h2{ 
+    font-size: 2rem;
+    font-weight:200;
+    padding-bottom:25px;
+    text-align:center;
+}
+
+.r-entry form{
+    width:100%;
+    height:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    flex-direction:column;
+}
+
+.r-entry p{
+    display: flex;
+    justify-content:center;
+    text-align: left;
+    font-family:"Abril Fatface",serif;
+}
+
+.form-group{
+    height:100vw;
+    font-family:"Syntony",sans-serif;
+    font-weight: bold;
+    width:100vw;
+    margin:0px;
+}
+
+.form-control{
+    font-family:"Syntony",sans-serif;
+    font-weight:bold;
+    width:100% !important;
+    border:cyan 2px solid;
+}
+
+.new-entry-btn{
+    margin-top:5px;
+    max-width:100%;
+    font-weight:500;
+    font-family:"Syntony",sans-serif;
+    font-size:2rem;
+    background-color:rgba(255, 255, 255, 0.529);
+    border-radius: 8px 8px 8px 8px;
+    color:rgb(0, 33, 94);
+    border: rgb(0, 33, 94) 2px solid;
+    margin-bottom:25px;
+}
+
+.new-entry-btn:hover{
+    transform: scale(1.5);
+    background-color:rgb(0, 33, 94);
+    border-color:none;
+    border-style:none;
+    color:white;
+    font-weight:200;
+}
+
+#new-entry {
+    width: 50vw;
+    height: 200px;
+    background-color:rgb(0, 33, 94);
+    color:white;
+    font-style:italic;
+}
+
+/*///////  ENTRY LIST /////// */
+.entryList{
+    margin-left: -30px;
+    font-family:"Abril Fatface",serif;
+    font-weight: 100;
+    justify-content:flex-start;
+    width:100%;
+}
+
+.entryList h2{
+    margin-top:20px;
+    margin-bottom:20px !important;
+    padding: 10px 0px 10px 10px;
+    border:4px white(0, 33, 94);
+    border-top: 2px white solid;
+    border-bottom: 2px white solid;
+    border-radius:8%;
+    color:rgb(0, 33, 94);
+    border-left:none;
+    border-right:none;
+
+}
+.entryList ul{
+    margin-top:25px;
+}
+
+.entryList li{
+    list-style: none;
+    text-align:left;
+    padding-left:10px;
+}
+
+.entryList a{
+    font-weight:400;
+    font-family:"Syntony",sans-serif;
+    text-decoration:none;
+    color:rgb(0, 33, 94);
+    gap:10px;
+}
+
+.entryList a:hover{
+    font-size:2rem;
+    font-weight:100;
+    padding:20px;
+    margin-left:20px;
+    text-transform:uppercase;
+}
+
+/*/////// BUTTONS /////// */
+.btn-div{
+    display:inline-flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:space-evenly;
+    margin: 20px 5px 0px 5px;
+}
+#entry-content, #entry-title{
+    width:100vw;
+}
+
+#cancelButton:hover,#submitButton:hover,#edit-btn:hover,#save-btn:hover,#delete-btn:hover{
+    background-color:white;
+    font-family:"Syntony",sans-serif;
+    width:100%;
+    border:rgb(0, 33, 94) 2px solid;
+    color:rgb(0, 33, 94);
+    transform: scale(1.02);
+}
+
+#cancelButton, #submitButton,#delete-btn, #edit-btn,.edit-btn, .delete-btn,#save-btn,#cancel-btn{
+    margin:5px;
+    font-family:"Syntony",sans-serif;
+    background-color:rgb(0, 33, 94);
+    color:white;
+    font-weight:bold;
+    border-style:none;
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+
+}
+/* ///////  POST DISPLAY /////// */
+.subTitle{
+    font-weight:bold !important;
+    width:100%;
+    font-size:2.5rem !important;
+    text-align:left !important;
+    font-family:"Abril Fatface",serif;
+}
+
+/*Edit DISPLAY */
+#entry-title{
+    color:black;
+    width:100%;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+#entry-content {
+    display:flex;
+    margin-bottom:10px;
+    font-family:"Synotony",sans-serif;
+    height: 50vh;
+    width: 100%;
+    justify-content:flex-start;
+}
+
+.content{
+    padding-bottom:50px !important;
+}
+
+.subDisplay{
+    width:100%;
+    height:60%;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;   
+}
+
+.btn-div{
+    margin-bottom:20px;
+    width:100%;
+    margin-left:0px !important;
+}
+
+.postDate{
+    display:flex;
+    bottom:0px;
+    margin-top:100px !important;
+    font-weight:100;
+    padding-top:50px;
+}
+
+/* /////// EDIT FORM /////// */
+form{
+    width:100%;
+    padding:15px;
+}
+
+.edit-entry{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+.editForm{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    margin-top:25px;
+}
+
+.edit-control{
+    width:100vw;
+}
+.form-btns{
+    display:flex;
+    max-width:100%;
+    align-items:center;
+}
+footer{
+    position:relative;
+    display:inline-flex;
+    margin-top:20%;
+    padding-top:10px;
+    align-items:center;
+    background-color:rgb(0, 33, 94);
+    color:white;
+    width:100%;
+    justify-content: center;
+    font-style:italic;
+    font-size:small; 
+}
+/*LOGIN PAGE */
+.loginForm,.meditateForm{
+    display:flex;
+    width:100%;
+    height:100vh;
+    margin-top:25px;
+    justify-content:flex-start;
+    flex-direction:column;
+    align-items:center;
+}
+.loginForm h1{
+    padding-top:25px;
+    font-family:"Syntony",sans-serif;
+    color:white; 
+    font-size: 3rem;
+    font-weight:100;
+    text-align:center;
+}
+.loginFormDisplay{
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+    justify-content:center;
+    padding: 0px 25px;
+    width:100%;
+    height:100%;
+
+}
+#credentials{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
+
+.login{
+    font-family:"Syntony",sans-serif;
+    color:rgb(0, 33, 94);
+    text-transform:uppercase;
+    font-size:1rem;
+    font-weight:00;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+}
+.loginSubmit{
+    width:100%;
+    margin-top:45px;
+    text-transform:uppercase;
+}
+.loginSubmit:hover{
+    transform:scale(1.1);
+}
+#uN,#pW{
+    margin-top:15px;
+    font-weight:bold;
+}  
+#unL{
+    font-weight:bold;
+}
+.pw-s{
+    margin-bottom:15px;
+}
+
+.loginSubmit{
+    margin-left:unset;
+    background-color:rgb(0, 33, 94);
+    color:white;
+    font-weight:bold;
+    border-style:none;
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+}
+
+#loginSubmit:hover{
+    background-color:white;
+    width:100%;
+    border:rgb(0, 33, 94) 2px solid;
+    color:rgb(0, 33, 94);
+    transform: scale(1.02);
+}
+.signUpLink{
+    text-align:center;
+    padding-top:25px;
+    font-size:0.7rem;
+}
+.signUpLink b:hover{
+    font-size:150%;
+}
+.signUpLink a{
+    text-decoration:none;
+}
+/* SIGNUP FORM */
+.singUpForm{
+    display:flex;
+    width:100%;
+    height:100%;
+    justify-content:flex-start;
+    flex-direction:column;
+    align-items:center;
+}
+
+.newUserSignUp{
+    margin-top:0px;
+}
+
+/*MEDITATE PAGE*/
+.circ-animation{
+    padding:5px 5px 0px 5px;
+    border-radius:50%;
+    margin-top:50px;
+    background-color:rgb(255, 255, 255);  
+}
+
+
+.meditateForm{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+
+}
+.meditateForm h1{
+    margin-top:25px;
+    font-family:'Roboto',serif;
+    color:white;
+    font-size: 4rem;
+    border-bottom: rgb(0,33,94) 10px solid;
+
+}
+.meditate{
+    display:flex;
+    margin-top:20px;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    flex-direction:column;
+    text-align:center;
+    font-family:"Syntony",serif;
+    color:rgb(0, 33, 94);
+    font-size:1.4rem;
+    font-weight:bold;
+}
+.meditate p{
+    font-weight:200;
+    font-style:italic;
+    color:white;
+    margin-top:25px;
+}
+.med-icon{
+
+}
+.medBox{
+    display:flex;
+    margin-top:0px;
+
+}
+
+.med-btn{
+    font-family:"Roboto",serif;
+    font-size:2rem;
+    font-weight:500;
+    height:100px;
+    width:100px;
+    margin:5px;
+    border-radius:50%;
+    border: rgb(0, 33, 94) 2px solid;
+    background-color:white;
+}
+
+.med-btn:hover{
+    font-family:"Syntony",serif;
+    transform: scale(1.2,1.2);
+    padding:5px;
+    background-color:rgb(0,33,94);
+    border:2px solid white;
+    color:white;
+    font-weight:200;
+}
+
+/*ANIMATION*/
+.med-animation{
+    margin-top:200px !important;
+    animation: pulse 11s infinite ease-in-out; 
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.4);
+    border:magenta solid 8px;
+
+  }
+  50% {
+    transform: scale(1.4);
+    border:cyan solid 12px;
+
+  }
+
+  100% {
+    transform: scale(0.4);
+    border:limegreen solid 8px;
+
+  }
+}

@@ -1,0 +1,65 @@
+<%- include("../views/header.ejs")%>
+
+<body>
+    <div class="app_title">
+        <h1 span>
+            <%= locals.title %>
+        </h1>
+    </span>
+</div>
+
+<div class="loginForm signUpForm">
+    <h1>Sign-Up</h1>
+    <div class="loginFormDisplay">
+        <div id="credentials">
+            <form id="newUserSignUp" class="newUserSignUp" method="POST" action="/newUser">
+                <label id="pW" for="first-name">First Name:</label>
+                <input class="form-control" name="first-name" type="text" placeholder="First Name">
+            
+                <label id="pW" for="last-name">Last Name:</label>
+                <input class="form-control" name="last-name" type="text" placeholder="Last Name">
+            
+                <label id="pW" for="new-username">Create Username:</label>
+                <input class="form-control" name="username" type="text" placeholder="Create a User Name">
+            
+                <label id="pW" for="new-password">Create Password:</label>
+                <small id="newPW" style="text-transform:lowercase;"><i>*Min. 8-10 Characters</i></small>
+                <input class="form-control" id="pw1" name="new-password" type="password" placeholder="Create a Password" required>
+            
+                <label id="pW" for="re-password">Re-Enter Password:</label>
+                <input class="form-control" id="pw2" name="re-password" type="password" placeholder="Re-Enter Your Password" required>
+            
+                <label id="pW" for="email">Email Address:</label>
+                <input class="form-control pw-s" name="email" type="email" placeholder="Enter Your Email Address" required>
+        
+                <input class="loginSubmit" type="submit" value="Create Account">
+            </form>
+            
+        </div>
+        
+    </div>
+</div>     
+
+<%- include("../views/footer.ejs")%>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+
+        $('form').on('.loginSubmit', function(e) {
+            var password1 = $('#pw1').val();
+            var password2 = $('#pw2').val();
+            console.log(password1);
+
+            if (password1 !== password2) {
+                alert("The passwords do not match. Please try again.");
+                e.preventDefault(); // Prevent form submission
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>

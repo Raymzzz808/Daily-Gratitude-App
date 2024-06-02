@@ -1,0 +1,176 @@
+<%- include("../views/header.ejs")%>
+<body>
+<div class="">  
+<div class="app_title">
+  <h1 span>
+    <%= locals.title %>
+  </h1>
+</span>
+</div>
+
+<div class = "content-box">
+<!-- DIV for FORM/BUTTON (Script that changes between the two. )-->
+<div class="r-entry">
+  <button id="newEntryButton" class="new-entry-btn flex-container">Give Thanks</button>
+</div>
+
+  <div class="entryList">
+  <!--LIST OF ENTRIES ON (LEFT SIDE!)-->
+  <ul>
+  <h2>Your Entries:</h2>
+    
+      <% postContent = postContent %>
+      <% for(let i = 0; i<posts.length; i++){ %>
+        <li> 
+          <a href="#" class="submission-link" data-title='<%= locals.posts[i] %>' 
+            data-textarea='<%= locals.postContent[i] %>'data-time='<%=locals.date[i]%>'>
+            <%= locals.posts[i] %>
+          </a>
+        </li>
+        <%}%>
+      </ul>
+    </div>
+    
+    </div>
+
+
+</div>
+</div>
+
+<%- include("../views/footer.ejs")%>
+<!--SCRIPTS:-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  //Text area to --> POST VIEW
+  $(document).ready(function() {
+
+      // Event listener for clicking on a submission link
+      $(document).on("click", ".submission-link", function(e) {
+        
+        
+        // Get the content from the data attribute of the clicked link
+        const content = $(this).data("textarea");
+        const title = $(this).data("title");
+        const time = $(this).data("time");
+        const postId = $(this).data("postId");
+        const formattedContent = content.split("\n").map(paragraph => `<li style="list-style:none !important;">${paragraph}</li>`).join('');
+        console.log('this is the post ID: ',postId);
+        //Replace the button and form with the content of the link
+        $(".r-entry").html(`<div class= "subDisplay">
+          <form action="/edit" method="POST">
+          <input type="hidden" name="title" value="${title}">
+          <h2 class="subTitle" style="color:white;">${title}</h2>
+          <input type="hidden" name="content" value="${content}">
+          <p class="subContent">${formattedContent}</p>
+          <div id="postDate" style="color:white;"><small><i>Posted on:${time} </i></small></div>
+          <div class="btn-div">
+          <button id="edit-btn">EDIT</button>
+          <button id="cancelButton">CANCEL</button>
+          </div></div></form>`);
+      });
+      //ENTRY LIST ANIMATION
+      $(".entryList").hide(0.1).slideToggle(800);
+
+      
+
+
+
+    $(document).on("click", ".entryList ",function(){
+      $('.entryList').slideDown();
+    });
+
+    
+    // Event listener for the "Create a New Entry" button
+    $(document).on("click", "#newEntryButton", function() {
+        // Create a new form element
+        var form = $("<form>").attr({
+            action: "/submit",
+            method: "POST",
+            id:"submissionForm"
+        });
+        //TITLE inputSECTION:
+        var titleInput = $("<input>").addClass("form-control").attr({
+            type: "text",
+            name:"entry-title",
+            id: "entry-title", 
+            placeholder: "Enter Title Here"            
+        });
+        //CONTENT/TEXTsection:
+        var textarea = $("<textarea>").addClass("form-control").attr({
+          type: "text",
+          id: "entry-content",
+          name: "entry-content",
+        });
+          //PLACEHOLDER for CONTENT/TEXTsection:
+          textarea.prop("placeholder", "Today, I am grateful for:");
+        //SUBMIT BUTTON:
+        var submitButton = $("<input>").attr({
+            type: "submit",
+            id: "submitButton",
+            value: "SUBMIT",
+            method:"POST"
+        });
+        //CANCEL BUTTON:
+        var cancelButton = $("<input>").attr({
+            type: "button",
+            id: "cancelButton",
+            method: "POST",
+            value: "CANCEL"
+        });
+        // APPENDS/CHANGES--->  textarea + submit button + cancel button TO THE FORM!
+        form.append(titleInput,textarea, submitButton, cancelButton);
+        // REPLACES BUTTON WITH FORM.
+        $(".r-entry").html(form);
+
+    });
+    //EVENT LISTENER for CANCELbutton!
+    $(document).on("click", "#cancelButton", function() {
+        // Create a new button element
+        var button = $("<button>").attr({
+            id: "newEntryButton",
+            class: "new-entry-btn"
+        }).text("Give Thanks");
+        //REPLACE form w/ BUTTON!
+        $(".r-entry").html(button);
+    });
+  //DELETE BUTTON
+  $(document).on("click", "#cancelButton", function() {
+        // Create a new button element
+        var button = $("<button>").attr({
+            id: "newEntryButton",
+            class: "new-entry-btn"
+        }).text("Give Thanks");
+        //REPLACE form w/ BUTTON!
+        $(".r-entry").html(button);
+    });
+});
+
+  document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('.submission-link');
+
+      links.forEach(link => {
+          const dataTitle = link.getAttribute('data-title');
+          
+          if (dataTitle) {
+              console.log('Data Title:', dataTitle);
+          } else {
+              console.log('Data Title attribute is missing');
+              // Handle the missing attribute case
+              // For example, set a default value
+              link.setAttribute('data-title', 'Default Title');
+          }
+
+          // You can also access other data attributes safely
+          const dataTextarea = link.getAttribute('data-textarea') || 'Default Textarea';
+          const dataTime = link.getAttribute('data-time') || 'Default Time';
+
+          console.log('Data Textarea:', dataTextarea);
+          console.log('Data Time:', dataTime);
+      });
+  });
+</script>
+
+</body>
+</html>
+

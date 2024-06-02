@@ -1,0 +1,100 @@
+<%- include("../views/header.ejs")%>
+
+<body>
+    <div class="app_title">
+        <h1 span>
+            <%= locals.title %>
+        </h1>
+    </span>
+</div>
+
+<div class="meditateForm">
+    <div class="circ-animation" id="circ-animation">
+        <img class="med-icon" src="/meditate.png" height="200"/>
+    </div>
+        <h1 id="med-h1">Meditate</h1>
+    <div class="meditate">
+        <p>Select a Duration (Minutes):</p>
+        
+        <div class="medBox">
+            <button class="med-btn" id="m2">2</button>
+            <button class="med-btn" id="m5">5</button>
+            <button class="med-btn" id="m8">8</button>
+        </div>
+
+    </div>
+</div>
+
+   
+
+<%- include("../views/footer.ejs")%>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        //Meditation Animations (2min)
+        $(document).on('click','#m2',function(){
+            $('.medBox').fadeToggle();
+            $('.meditate').fadeToggle();
+            $('#med-h1').fadeToggle();        
+            $('#circ-animation').addClass('med-animation');
+            sound1.play();
+            setTimeout(function(){
+                $('#circ-animation').removeClass('med-animation');
+                $('.medBox').fadeToggle();
+                $('.meditate').fadeToggle();
+                $('#med-h1').fadeToggle();
+            },120000);    
+        });
+
+        //Meditation Animtions (5min)
+        $(document).on('click','#m5',function(){
+            $('.medBox').fadeToggle();
+            $('.meditate').fadeToggle();
+            $('#med-h1').fadeToggle();
+            $('#circ-animation').addClass('med-animation');
+            sound1.play();
+            setTimeout(function(){
+                $('#circ-animation').removeClass('med-animation');
+                $('.medBox').fadeToggle();
+                $('.meditate').fadeToggle();
+                $('#med-h1').fadeToggle();
+                sound1.pause();
+            },300000);    
+        });
+
+        //Meditation Animtions (8min)
+        $(document).on('click','#m8',function(){
+            $('.medBox').fadeToggle();
+            $('.meditate').fadeToggle();
+            $('#med-h1').fadeToggle();
+            $('#circ-animation').addClass('med-animation');
+            sound1.play();
+            setTimeout(function(){
+                $('#circ-animation').removeClass('med-animation');
+                $('.medBox').fadeToggle();
+                $('.meditate').fadeToggle();
+                $('#med-h1').fadeToggle();
+                sound1.pause();
+                
+            },480000);   
+        });
+        //STOPS animation when icon is clicked.
+        $(document).on('click','#circ-animation',function(){
+            $('#circ-animation').removeClass('med-animation');
+                $('.medBox').fadeToggle();
+                $('.meditate').fadeToggle();
+                $('#med-h1').fadeToggle();
+                sound1.pause();
+        });
+
+    });
+
+    var sound1 = new Audio("./sounds/meditate.mp3");
+</script>
+
+
+</body>
+</html>
