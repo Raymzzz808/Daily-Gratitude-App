@@ -153,8 +153,8 @@ app.post("/save",(req,res)=>{
 app.post("/edit/",(req, res) => {
   const index = posts.indexOf(req.body.title);
   const indexC = postContent.indexOf(req.body.content);
-  let postTitleEdit = req.body.title;
-  let formattedContent = req.body.content;
+  const postTitleEdit = req.body.title;
+  const formattedContent = req.body.content;
   if (req.body.title != req.body.postTitleEdit || req.body.content != req.body.postContentEdit){
     posts[index] = req.body['entry-title'];
     postContent[indexC] = req.body['entry-content'];   
@@ -167,15 +167,17 @@ app.post("/edit/",(req, res) => {
       postContentEdit: formattedContent,
       title
   });
+  console.log(index);
 });
 
 //DELETE POST
 app.post("/delete",(req,res)=>{
   const deleteContent = req.body['entry-content'];
   const index = posts.indexOf(req.body['entry-title']);
+    console.log(index);
   if (index === -1) {
-      posts.pop(index);
-      postContent.pop(index);
+      posts.pop(index,-1);
+      postContent.pop(index,-1);
   } 
   res.render("../views/index.ejs",{
     deleteContent,
@@ -185,6 +187,7 @@ app.post("/delete",(req,res)=>{
     date:postdate,
     content:postContent
   });
+
 });
 
 //ABOUT PAGE
