@@ -7,7 +7,18 @@
     </span>
 </div>
 
-<%- include("../views/footer.ejs")%>
+<form action='/save' method='POST' class="editForm">
+    <input  class="form-control" type='text' id="entry-title" name='entry-title' value="<%=locals.postTitleEdit%>">
+    <textarea id="entry-content" name="entry-content"><%= locals.postContentEdit.replace(/\n/g, '&#13;&#10;') %></textarea>
+    <input type='submit' id="cancelButton" method="POST" value="SAVE">
+    </form>
+    <form action="/delete" method="POST">
+        <button  id="delete-btn" name="_method" type="submit" onClick="return confirm(`Are you sure you want tot delete this post?`)">DELETE</button>
+    </form>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
+<%- include("../views/footer.ejs")%>
