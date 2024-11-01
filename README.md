@@ -1,2 +1,3 @@
-# Capstone3
-Capstone3 (The Daily Gratitude App) - EJS, Node, JS, HTML, and CSS
+# The Daily Gratitude App
+An daily gratidute application that can be used as a way to express your daily gratitude.
+Created with EJS, Node, JS, HTML, and CSS
